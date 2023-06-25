@@ -1,0 +1,36 @@
+@echo off
+title Opções de Desligamento
+color 0A
+
+:menu
+cls
+echo Escolha o tempo de desligamento:
+echo 1. 10 minutos
+echo 2. 15 minutos
+echo 3. 30 minutos
+echo 4. 1 hora
+echo 5. 2 horas
+echo 6. 3 horas
+echo 0. Sair
+
+set /p opcao=Digite o número da opção desejada: 
+
+if "%opcao%"=="1" (
+    shutdown /s /t 600
+) else if "%opcao%"=="2" (
+    shutdown /s /t 900
+) else if "%opcao%"=="3" (
+    shutdown /s /t 1800
+) else if "%opcao%"=="4" (
+    shutdown /s /t 3600
+) else if "%opcao%"=="5" (
+    shutdown /s /t 7200
+) else if "%opcao%"=="6" (
+    shutdown /s /t 10800
+) else if "%opcao%"=="0" (
+    exit
+) else (
+    echo Opção inválida. Por favor, tente novamente.
+    timeout /t 3 >nul
+    goto menu
+)
